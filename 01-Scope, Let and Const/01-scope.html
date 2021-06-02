@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Function Scope VS Block Scope</title>
 </head>
+
 <body>
     <script>
-        var name = 'Alberto';
-
+        let name = 'Alberto';
+        // questo codice serve solo per giocare con var let e const
+        // RICORDA: var è stato deprecato perché fa uso del function scope
+        // mentre let e const usano il block scope e quindi è meno probabile 
+        // incappare in problematiche di visibilità delle variabili
         function myFun(isTrue) {
-            if(isTrue){
-                var name = 'Marta';
+            if (isTrue) {
+                let name = 'Marta';
                 return name;
             }
             return name;
         }
 
-        console.log(myFun(false));
+        console.log(myFun(true));
     </script>
 </body>
+
 </html>
